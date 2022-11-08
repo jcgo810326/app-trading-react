@@ -12,38 +12,36 @@ import {useAuth} from '../core/Auth'
 
 const initialValues = {
   firstname: '',
-  lastname: '',
+  lastname: 't',
   email: '',
   password: '',
   changepassword: '',
   acceptTerms: false,
+  acceptTerms2: false,
 }
 
 const registrationSchema = Yup.object().shape({
   firstname: Yup.string()
-    .min(3, 'Minimum 3 symbols')
-    .max(50, 'Maximum 50 symbols')
-    .required('First name is required'),
+    .min(3, 'Minimo 3 letras')
+    .max(36, 'Maximo 36 letras')
+    .required('Usuario es Requerido'),
   email: Yup.string()
-    .email('Wrong email format')
-    .min(3, 'Minimum 3 symbols')
-    .max(50, 'Maximum 50 symbols')
-    .required('Email is required'),
-  lastname: Yup.string()
-    .min(3, 'Minimum 3 symbols')
-    .max(50, 'Maximum 50 symbols')
-    .required('Last name is required'),
+    .email('Formato de correo invalido')
+    .min(3, 'Minimo 3 letras')
+    .max(50, 'Maximo 50 letras')
+    .required('Correo es Requerido'),
   password: Yup.string()
-    .min(3, 'Minimum 3 symbols')
-    .max(50, 'Maximum 50 symbols')
-    .required('Password is required'),
+    .min(8, 'Minimo 8 letras')
+    .max(50, 'Maximo 50 letras')
+    .required('Contraseña es Requerida'),
   changepassword: Yup.string()
-    .required('Password confirmation is required')
+    .required('Es necesario confirmar el password')
     .when('password', {
       is: (val: string) => (val && val.length > 0 ? true : false),
-      then: Yup.string().oneOf([Yup.ref('password')], "Password and Confirm Password didn't match"),
+      then: Yup.string().oneOf([Yup.ref('password')], 'Contraseña no coincide'),
     }),
-  acceptTerms: Yup.bool().required('You must accept the terms and conditions'),
+  acceptTerms: Yup.bool().required('Debes aceptar los terminos y condiciones'),
+  acceptTerms2: Yup.bool().required('Debes aceptar los terminos y condiciones'),
 })
 
 export function Registration() {
@@ -54,6 +52,7 @@ export function Registration() {
     validationSchema: registrationSchema,
     onSubmit: async (values, {setStatus, setSubmitting}) => {
       setLoading(true)
+      console.log(values)
       try {
         const {data: auth} = await register(
           values.email,
@@ -62,6 +61,7 @@ export function Registration() {
           values.password,
           values.changepassword
         )
+        console.log('auth', auth)
         saveAuth(auth)
         const {data: user} = await getUserByToken(auth.api_token)
         setCurrentUser(user)
@@ -89,10 +89,8 @@ export function Registration() {
       {/* begin::Heading */}
       <div className='text-center mb-11'>
         {/* begin::Title */}
-        <h1 className='text-dark fw-bolder mb-3'>Sign Up</h1>
+        <h1 className='text-dark fw-bolder mb-3'>Cree una cuenta</h1>
         {/* end::Title */}
-
-        <div className='text-gray-500 fw-semibold fs-6'>Your Social Campaigns</div>
       </div>
       {/* end::Heading */}
 
@@ -110,7 +108,7 @@ export function Registration() {
               src={toAbsoluteUrl('/media/svg/brand-logos/google-icon.svg')}
               className='h-15px me-3'
             />
-            Sign in with Google
+            Google
           </a>
           {/* end::Google link */}
         </div>
@@ -125,15 +123,15 @@ export function Registration() {
           >
             <img
               alt='Logo'
-              src={toAbsoluteUrl('/media/svg/brand-logos/apple-black.svg')}
+              src={toAbsoluteUrl('/media/svg/brand-logos/facebook-4.svg')}
               className='theme-light-show h-15px me-3'
             />
             <img
               alt='Logo'
-              src={toAbsoluteUrl('/media/svg/brand-logos/apple-black-dark.svg')}
+              src={toAbsoluteUrl('/media/svg/brand-logos/facebook-4.svg')}
               className='theme-dark-show h-15px me-3'
             />
-            Sign in with Apple
+            Facebook
           </a>
           {/* end::Google link */}
         </div>
@@ -142,7 +140,7 @@ export function Registration() {
       {/* end::Login options */}
 
       <div className='separator separator-content my-14'>
-        <span className='w-125px text-gray-500 fw-semibold fs-7'>Or with email</span>
+        <span className='w-125px text-gray-500 fw-semibold fs-7'>O</span>
       </div>
 
       {formik.status && (
@@ -153,9 +151,9 @@ export function Registration() {
 
       {/* begin::Form group Firstname */}
       <div className='fv-row mb-8'>
-        <label className='form-label fw-bolder text-dark fs-6'>First name</label>
+        <label className='form-label fw-bolder text-dark fs-6'>Usuario</label>
         <input
-          placeholder='First name'
+          placeholder='Usuario'
           type='text'
           autoComplete='off'
           {...formik.getFieldProps('firstname')}
@@ -178,8 +176,8 @@ export function Registration() {
         )}
       </div>
       {/* end::Form group */}
-      <div className='fv-row mb-8'>
-        {/* begin::Form group Lastname */}
+
+      {/* <div className='fv-row mb-8'>
         <label className='form-label fw-bolder text-dark fs-6'>Last name</label>
         <input
           placeholder='Last name'
@@ -203,8 +201,8 @@ export function Registration() {
             </div>
           </div>
         )}
-        {/* end::Form group */}
-      </div>
+
+      </div> */}
 
       {/* begin::Form group Email */}
       <div className='fv-row mb-8'>
@@ -235,11 +233,11 @@ export function Registration() {
       {/* begin::Form group Password */}
       <div className='fv-row mb-8' data-kt-password-meter='true'>
         <div className='mb-1'>
-          <label className='form-label fw-bolder text-dark fs-6'>Password</label>
+          <label className='form-label fw-bolder text-dark fs-6'>Contraseña</label>
           <div className='position-relative mb-3'>
             <input
               type='password'
-              placeholder='Password'
+              placeholder='Contraseña'
               autoComplete='off'
               {...formik.getFieldProps('password')}
               className={clsx(
@@ -273,17 +271,15 @@ export function Registration() {
           {/* end::Meter */}
         </div>
         <div className='text-muted'>
-          Use 8 or more characters with a mix of letters, numbers & symbols.
+          Utilize de 8 a 32 letras incluyendo letras, numeros, letras en mayuscula o signos.
         </div>
       </div>
-      {/* end::Form group */}
 
-      {/* begin::Form group Confirm password */}
       <div className='fv-row mb-5'>
-        <label className='form-label fw-bolder text-dark fs-6'>Confirm Password</label>
+        <label className='form-label fw-bolder text-dark fs-6'>Confirmar contraseña</label>
         <input
           type='password'
-          placeholder='Password confirmation'
+          placeholder='Repita contraseña'
           autoComplete='off'
           {...formik.getFieldProps('changepassword')}
           className={clsx(
@@ -306,6 +302,9 @@ export function Registration() {
       </div>
       {/* end::Form group */}
 
+      {/* begin::Form group Confirm password */}
+      {/* end::Form group */}
+
       {/* begin::Form group */}
       <div className='fv-row mb-8'>
         <label className='form-check form-check-inline' htmlFor='kt_login_toc_agree'>
@@ -316,13 +315,13 @@ export function Registration() {
             {...formik.getFieldProps('acceptTerms')}
           />
           <span>
-            I Accept the{' '}
+            Acepto los
             <a
               href='https://keenthemes.com/metronic/?page=faq'
               target='_blank'
               className='ms-1 link-primary'
             >
-              Terms
+              Terminos 1
             </a>
             .
           </span>
@@ -335,6 +334,35 @@ export function Registration() {
           </div>
         )}
       </div>
+
+      <div className='fv-row mb-8'>
+        <label className='form-check form-check-inline' htmlFor='kt_login_toc_agree2'>
+          <input
+            className='form-check-input'
+            type='checkbox'
+            id='kt_login_toc_agree2'
+            {...formik.getFieldProps('acceptTerms2')}
+          />
+          <span>
+            Acepto los{' '}
+            <a
+              href='https://keenthemes.com/metronic/?page=faq'
+              target='_blank'
+              className='ms-1 link-primary'
+            >
+              Terminos 2
+            </a>
+            .
+          </span>
+        </label>
+        {formik.touched.acceptTerms2 && formik.errors.acceptTerms2 && (
+          <div className='fv-plugins-message-container'>
+            <div className='fv-help-block'>
+              <span role='alert'>{formik.errors.acceptTerms2}</span>
+            </div>
+          </div>
+        )}
+      </div>
       {/* end::Form group */}
 
       {/* begin::Form group */}
@@ -343,9 +371,14 @@ export function Registration() {
           type='submit'
           id='kt_sign_up_submit'
           className='btn btn-lg btn-primary w-100 mb-5'
-          disabled={formik.isSubmitting || !formik.isValid || !formik.values.acceptTerms}
+          disabled={
+            formik.isSubmitting ||
+            !formik.isValid ||
+            !formik.values.acceptTerms ||
+            !formik.values.acceptTerms2
+          }
         >
-          {!loading && <span className='indicator-label'>Submit</span>}
+          {!loading && <span className='indicator-label'>Crear cuenta</span>}
           {loading && (
             <span className='indicator-progress' style={{display: 'block'}}>
               Please wait...{' '}
@@ -359,7 +392,7 @@ export function Registration() {
             id='kt_login_signup_form_cancel_button'
             className='btn btn-lg btn-light-primary w-100 mb-5'
           >
-            Cancel
+            Tiene una cuenta? Inicie sesion
           </button>
         </Link>
       </div>

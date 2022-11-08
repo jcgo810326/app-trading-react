@@ -49,7 +49,7 @@ export interface UserModel {
   password: string | undefined
   email: string
   first_name: string
-  last_name: string
+  last_name?: string
   fullname?: string
   occupation?: string
   companyName?: string

@@ -64,7 +64,7 @@ export function Login() {
     >
       {/* begin::Heading */}
       <div className='text-center mb-11'>
-        <h1 className='text-dark fw-bolder mb-3'>Iniciar sesión</h1>
+        <h1 className=' fw-bolder mb-3'>Iniciar sesión</h1>
         {/* <div className='text-gray-500 fw-semibold fs-6'>Your Social Campaigns</div> */}
       </div>
       {/* begin::Heading */}
@@ -116,7 +116,7 @@ export function Login() {
       {/* end::Form group */}
 
       {/* begin::Form group */}
-      <div className='fv-row mb-3'>
+      <div className='fv-row mb-10'>
         <label className='form-label fw-bolder text-dark fs-6 mb-0'>Contraseña</label>
         <input
           type='password'
@@ -143,15 +143,7 @@ export function Login() {
       {/* end::Form group */}
 
       {/* begin::Wrapper */}
-      <div className='d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8'>
-        <div />
 
-        {/* begin::Link */}
-        <Link to='/auth/forgot-password' className='link-primary'>
-          Forgot Password ?
-        </Link>
-        {/* end::Link */}
-      </div>
       {/* end::Wrapper */}
 
       {/* begin::Action */}
@@ -162,7 +154,7 @@ export function Login() {
           className='btn btn-primary'
           disabled={formik.isSubmitting || !formik.isValid}
         >
-          {!loading && <span className='indicator-label'>Continue</span>}
+          {!loading && <span className='indicator-label'>Continuar</span>}
           {loading && (
             <span className='indicator-progress' style={{display: 'block'}}>
               Please wait...
@@ -184,9 +176,9 @@ export function Login() {
         <span className='w-125px text-gray-500 fw-semibold fs-7'>O</span>
       </div>
 
-      <div className='row g-3 mb-9'>
+      <div className='col g-6 mb-9'>
         {/* begin::Col */}
-        <div className='col-md-6'>
+        <div className='col-md-12 mb-5 mx-auto'>
           {/* begin::Google link */}
           <a
             href='#'
@@ -197,14 +189,28 @@ export function Login() {
               src={toAbsoluteUrl('/media/svg/brand-logos/google-icon.svg')}
               className='h-15px me-3'
             />
-            Sign in with Google
+            Continuar con Google
           </a>
           {/* end::Google link */}
         </div>
-        {/* end::Col */}
 
-        {/* begin::Col */}
-        <div className='col-md-6'>
+        <div className='col-md-12 mb-5 mx-auto'>
+          {/* begin::Google link */}
+          <a
+            href='#'
+            className='btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100'
+          >
+            <img
+              alt='Logo'
+              src={toAbsoluteUrl('/media/svg/brand-logos/facebook-4.svg')}
+              className='h-15px me-3'
+            />
+            Continuar con Facebook
+          </a>
+          {/* end::Google link */}
+        </div>
+
+        <div className='col-md-12  mx-auto'>
           {/* begin::Google link */}
           <a
             href='#'
@@ -213,17 +219,16 @@ export function Login() {
             <img
               alt='Logo'
               src={toAbsoluteUrl('/media/svg/brand-logos/apple-black.svg')}
-              className='theme-light-show h-15px me-3'
+              className='h-15px me-3'
             />
-            <img
-              alt='Logo'
-              src={toAbsoluteUrl('/media/svg/brand-logos/apple-black-dark.svg')}
-              className='theme-dark-show h-15px me-3'
-            />
-            Sign in with Apple
+            Continuar con Apple
           </a>
           {/* end::Google link */}
         </div>
+        {/* end::Col */}
+
+        {/* begin::Col */}
+
         {/* end::Col */}
       </div>
     </form>

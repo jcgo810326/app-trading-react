@@ -27,7 +27,7 @@ export function register(
   return axios.post(REGISTER_URL, {
     email,
     first_name: firstname,
-    last_name: lastname,
+    last_name: 'test',
     password,
     password_confirmation,
   })
