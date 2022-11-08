@@ -1,33 +1,33 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import clsx from 'clsx'
-import React, {useState} from 'react'
-import {KTSVG, toAbsoluteUrl} from '../../../_metronic/helpers'
-import {getLayoutFromLocalStorage, ILayout, LayoutSetup} from '../../../_metronic/layout/core'
+// import clsx from 'clsx'
+// import React, {useState} from 'react'
+import {toAbsoluteUrl} from '../../../_metronic/helpers'
+// import {getLayoutFromLocalStorage, ILayout, LayoutSetup} from '../../../_metronic/layout/core'
 
 const PortafolioPage: React.FC = () => {
-  const [tab, setTab] = useState('Sidebar')
-  const [config, setConfig] = useState<ILayout>(getLayoutFromLocalStorage())
-  const [configLoading, setConfigLoading] = useState<boolean>(false)
-  const [resetLoading, setResetLoading] = useState<boolean>(false)
+  // const [tab, setTab] = useState('Sidebar')
+  // const [config, setConfig] = useState<ILayout>(getLayoutFromLocalStorage())
+  // const [configLoading, setConfigLoading] = useState<boolean>(false)
+  // const [resetLoading, setResetLoading] = useState<boolean>(false)
 
-  const updateConfig = () => {
-    setConfigLoading(true)
-    try {
-      LayoutSetup.setConfig(config)
-      window.location.reload()
-    } catch (error) {
-      setConfig(getLayoutFromLocalStorage())
-      setConfigLoading(false)
-    }
-  }
+  // const updateConfig = () => {
+  //   setConfigLoading(true)
+  //   try {
+  //     LayoutSetup.setConfig(config)
+  //     window.location.reload()
+  //   } catch (error) {
+  //     setConfig(getLayoutFromLocalStorage())
+  //     setConfigLoading(false)
+  //   }
+  // }
 
-  const reset = () => {
-    setResetLoading(true)
-    setTimeout(() => {
-      setConfig(getLayoutFromLocalStorage())
-      setResetLoading(false)
-    }, 1000)
-  }
+  // const reset = () => {
+  //   setResetLoading(true)
+  //   setTimeout(() => {
+  //     setConfig(getLayoutFromLocalStorage())
+  //     setResetLoading(false)
+  //   }, 1000)
+  // }
 
   return (
     <>
@@ -53,31 +53,32 @@ const PortafolioPage: React.FC = () => {
       </div>
 
       <div className='card card-custom'>
-        <div className='d-flex flex-wrap flex-stack'>
-          <div className='d-flex flex-column flex-grow-1  '>
+        <div className='d-flex flex-wrap flex-stack  p-2'>
+          <div className='d-flex flex-column flex-grow-1'>
             <div className='d-flex flex-wrap flex justify-between'>
-              <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3'>
+              <div className='border border-gray-300  rounded min-w-125px py-3 px-4 me-6 mb-3 mt-3'>
                 <div className='d-flex align-items-center '>
                   <div className='fs-2 fw-bolder'>$0.00</div>
                 </div>
 
                 <div className='fw-bold fs-6 text-gray-400'>Efectivo Disponible</div>
               </div>
-              <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3'>
+
+              <div className='border border-gray-300  rounded min-w-125px py-3 px-4 me-6 mb-3 mt-3'>
                 <div className='d-flex align-items-center '>
                   <div className='fs-2 fw-bolder'>$0.00</div>
                 </div>
 
                 <div className='fw-bold fs-6 text-gray-400'>Total Invertido</div>
               </div>
-              <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3'>
+              <div className='border border-gray-300  rounded min-w-125px py-3 px-4 me-6 mb-3 mt-3'>
                 <div className='d-flex align-items-center '>
                   <div className='fs-2 fw-bolder'>$0.00</div>
                 </div>
 
                 <div className='fw-bold fs-6 text-gray-400'>Ganancia/Perdida</div>
               </div>
-              <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3'>
+              <div className='border border-gray-300 rounded min-w-125px py-3 px-4 me-6 mb-3 mt-3'>
                 <div className='d-flex align-items-center '>
                   <div className='fs-2 fw-bolder'>$0.00</div>
                 </div>
