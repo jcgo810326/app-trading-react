@@ -1,7 +1,7 @@
 import {useEffect} from 'react'
 import {Outlet, useLocation} from 'react-router-dom'
 import {HeaderWrapper} from './components/header'
-import {RightToolbar} from '../partials/layout/RightToolbar'
+// import {RightToolbar} from '../partials/layout/RightToolbar'
 import {ScrollTop} from './components/scroll-top'
 import {Content} from './components/content'
 import {FooterWrapper} from './components/footer'
@@ -15,7 +15,7 @@ import {
 } from '../partials'
 import {PageDataProvider} from './core'
 import {reInitMenu} from '../helpers'
-import {ToolbarWrapper} from './components/toolbar'
+// import {ToolbarWrapper} from './components/toolbar'
 
 const MasterLayout = () => {
   const location = useLocation()
@@ -33,7 +33,7 @@ const MasterLayout = () => {
               <Sidebar />
               <div className='app-main flex-column flex-row-fluid' id='kt_app_main'>
                 <div className='d-flex flex-column flex-column-fluid'>
-                  <ToolbarWrapper />
+                  {/* <ToolbarWrapper /> */}
                   <Content>
                     <Outlet />
                   </Content>
@@ -46,7 +46,7 @@ const MasterLayout = () => {
 
         {/* begin:: Drawers */}
         <ActivityDrawer />
-        <RightToolbar />
+        {/* <RightToolbar /> */}
         <DrawerMessenger />
         {/* end:: Drawers */}
 

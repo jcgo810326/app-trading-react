@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react'
 import {useIntl} from 'react-intl'
-import {KTSVG} from '../../../../helpers'
-import {SidebarMenuItemWithSub} from './SidebarMenuItemWithSub'
+// import {KTSVG} from '../../../../helpers'
+// import {SidebarMenuItemWithSub} from './SidebarMenuItemWithSub'
 import {SidebarMenuItem} from './SidebarMenuItem'
 
 const SidebarMenuMain = () => {
@@ -16,12 +16,68 @@ const SidebarMenuMain = () => {
         title={intl.formatMessage({id: 'MENU.DASHBOARD'})}
         fontIcon='bi-app-indicator'
       />
-      <SidebarMenuItem
+      {/* <SidebarMenuItem
         to='/builder'
         icon='/media/icons/duotune/general/gen019.svg'
         title='Layout Builder'
         fontIcon='bi-layers'
+      /> */}
+      <SidebarMenuItem
+        to='/portafolio'
+        icon='/media/icons/duotune/general/gen019.svg'
+        title='Billetera Digital (Mi Portafolio)'
+        fontIcon='bi-layers'
       />
+      <SidebarMenuItem
+        to='/#'
+        icon='/media/icons/duotune/general/gen019.svg'
+        title='Red Solamartes'
+        fontIcon='bi-layers'
+      />
+      <SidebarMenuItem
+        to='/#'
+        icon='/media/icons/duotune/general/gen019.svg'
+        title='Crea una orden'
+        fontIcon='bi-layers'
+      />
+      <SidebarMenuItem
+        to='/#'
+        icon='/media/icons/duotune/general/gen019.svg'
+        title='Crea una Oferta'
+        fontIcon='bi-layers'
+      />
+      <SidebarMenuItem
+        to='/#'
+        icon='/media/icons/duotune/general/gen019.svg'
+        title='Panel de Órdenes Abiertas'
+        fontIcon='bi-layers'
+      />
+      <SidebarMenuItem
+        to='/#'
+        icon='/media/icons/duotune/general/gen019.svg'
+        title='Panel de Oferta Energética'
+        fontIcon='bi-layers'
+      />
+      <SidebarMenuItem
+        to='/#'
+        icon='/media/icons/duotune/general/gen019.svg'
+        title='Panel de Oferta Energética'
+        fontIcon='bi-layers'
+      />
+      <SidebarMenuItem
+        to='/#'
+        icon='/media/icons/duotune/general/gen019.svg'
+        title='Mis Transacciones'
+        fontIcon='bi-layers'
+      />
+      <SidebarMenuItem
+        to='/#'
+        icon='/media/icons/duotune/general/gen019.svg'
+        title='Sala de Monitoreo'
+        fontIcon='bi-layers'
+      />
+
+      {/*       
       <div className='menu-item'>
         <div className='menu-content pt-8 pb-2'>
           <span className='menu-section text-muted text-uppercase fs-8 ls-1'>Crafted</span>
@@ -125,7 +181,7 @@ const SidebarMenuMain = () => {
           </span>
           <span className='menu-title'>Changelog {process.env.REACT_APP_VERSION}</span>
         </a>
-      </div>
+      </div> */}
     </>
   )
 }
