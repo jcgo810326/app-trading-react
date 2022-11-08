@@ -52,7 +52,6 @@ export function Registration() {
     validationSchema: registrationSchema,
     onSubmit: async (values, {setStatus, setSubmitting}) => {
       setLoading(true)
-      console.log(values)
       try {
         const {data: auth} = await register(
           values.email,
@@ -61,14 +60,13 @@ export function Registration() {
           values.password,
           values.changepassword
         )
-        console.log('auth', auth)
         saveAuth(auth)
         const {data: user} = await getUserByToken(auth.api_token)
         setCurrentUser(user)
       } catch (error) {
         console.error(error)
         saveAuth(undefined)
-        setStatus('The registration details is incorrect')
+        setStatus('Hubo un error en el registro')
         setSubmitting(false)
         setLoading(false)
       }
