@@ -34,7 +34,7 @@ const PortafolioPage: React.FC = () => {
       <div className='card mb-10'>
         <div className='card-body d-flex align-items-center py-8'>
           <div className='ms-6'>
-            <h1 className='p-0 m-0'>MI PORTAFOLIO</h1>
+            <h1 className='p-0 m-0'>Mi billetera</h1>
             <div className='d-flex my-2'></div>
           </div>
         </div>

@@ -17,24 +17,24 @@ const SidebarLogo = () => {
   const toggleState = appSidebarDefaultMinimizeDesktopEnabled ? 'active' : ''
   const appSidebarDefaultMinimizeDefault = config.app?.sidebar?.default?.minimize?.desktop?.default
   return (
-    <div className='app-sidebar-logo px-6' id='kt_app_sidebar_logo'>
+    <div className='app-sidebar-logo px-6 ' id='kt_app_sidebar_logo'>
       <Link to='/dashboard'>
         {config.layoutType === 'dark-sidebar' ? (
           <img
             alt='Logo'
-            src={toAbsoluteUrl('/media/logos/default-dark.svg')}
+            src={toAbsoluteUrl('/media/logos/logosolarmates.png')}
             className='h-25px app-sidebar-logo-default'
           />
         ) : (
           <>
             <img
               alt='Logo'
-              src={toAbsoluteUrl('/media/logos/default.svg')}
+              src={toAbsoluteUrl('/media/logos/logosolarmates.png')}
               className='h-25px app-sidebar-logo-default theme-light-show'
             />
             <img
               alt='Logo'
-              src={toAbsoluteUrl('/media/logos/default-dark.svg')}
+              src={toAbsoluteUrl('/media/logos/logosolarmates.png')}
               className='h-25px app-sidebar-logo-default theme-dark-show'
             />
           </>

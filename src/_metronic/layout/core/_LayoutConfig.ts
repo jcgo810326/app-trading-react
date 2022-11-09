@@ -1,7 +1,7 @@
 import {ILayout} from './_Models'
 
 export const DefaultConfig: ILayout = {
-  layoutType: 'dark-sidebar',
+  layoutType: 'light-header',
   main: {
     componentName: 'main',
     type: 'default',

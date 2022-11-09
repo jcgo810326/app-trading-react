@@ -1,21 +1,21 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react'
-import {useIntl} from 'react-intl'
+// import {useIntl} from 'react-intl'
 // import {KTSVG} from '../../../../helpers'
 // import {SidebarMenuItemWithSub} from './SidebarMenuItemWithSub'
 import {SidebarMenuItem} from './SidebarMenuItem'
 
 const SidebarMenuMain = () => {
-  const intl = useIntl()
+  // const intl = useIntl()
 
   return (
     <>
-      <SidebarMenuItem
+      {/* <SidebarMenuItem
         to='/dashboard'
         icon='/media/icons/duotune/art/art002.svg'
         title={intl.formatMessage({id: 'MENU.DASHBOARD'})}
         fontIcon='bi-app-indicator'
-      />
+      /> */}
       {/* <SidebarMenuItem
         to='/builder'
         icon='/media/icons/duotune/general/gen019.svg'
@@ -25,7 +25,7 @@ const SidebarMenuMain = () => {
       <SidebarMenuItem
         to='/portafolio'
         icon='/media/icons/duotune/general/gen019.svg'
-        title='Billetera Digital (Mi Portafolio)'
+        title='Billetera Digital'
         fontIcon='bi-layers'
       />
       <SidebarMenuItem
