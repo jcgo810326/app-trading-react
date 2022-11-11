@@ -93,4 +93,4 @@ const PortafolioPage: React.FC = () => {
   )
 }
 
-export {PortafolioPage as BuilderPage}
+export default PortafolioPage

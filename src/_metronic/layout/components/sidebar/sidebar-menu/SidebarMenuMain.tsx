@@ -77,6 +77,13 @@ const SidebarMenuMain = () => {
         fontIcon='bi-layers'
       />
 
+      <SidebarMenuItem
+        to='/profile'
+        icon='/media/icons/duotune/general/gen019.svg'
+        title='Perfil de Usuario'
+        fontIcon='bi-layers'
+      />
+
       {/*       
       <div className='menu-item'>
         <div className='menu-content pt-8 pb-2'>
