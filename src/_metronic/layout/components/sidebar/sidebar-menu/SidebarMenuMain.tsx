@@ -61,12 +61,6 @@ const SidebarMenuMain = () => {
       <SidebarMenuItem
         to='/#'
         icon='/media/icons/duotune/general/gen019.svg'
-        title='Panel de Oferta Energética'
-        fontIcon='bi-layers'
-      />
-      <SidebarMenuItem
-        to='/#'
-        icon='/media/icons/duotune/general/gen019.svg'
         title='Mis Transacciones'
         fontIcon='bi-layers'
       />
