@@ -12,69 +12,76 @@ const SidebarMenuMain = () => {
     <>
       {/* <SidebarMenuItem
         to='/dashboard'
-        icon='/media/icons/duotune/art/art002.svg'
+        // icon='/media/icons/duotune/art/art002.svg'
         title={intl.formatMessage({id: 'MENU.DASHBOARD'})}
         fontIcon='bi-app-indicator'
       /> */}
       {/* <SidebarMenuItem
         to='/builder'
-        icon='/media/icons/duotune/general/gen019.svg'
+        // icon='/media/icons/duotune/general/gen019.svg'
         title='Layout Builder'
         fontIcon='bi-layers'
       /> */}
       <SidebarMenuItem
         to='/portafolio'
-        icon='/media/icons/duotune/general/gen019.svg'
+        // icon='/media/icons/duotune/general/gen019.svg'
         title='Billetera Digital'
         fontIcon='bi-layers'
       />
       <SidebarMenuItem
         to='/#'
-        icon='/media/icons/duotune/general/gen019.svg'
+        // icon='/media/icons/duotune/general/gen019.svg'
         title='Red Solamartes'
         fontIcon='bi-layers'
       />
       <SidebarMenuItem
         to='/#'
-        icon='/media/icons/duotune/general/gen019.svg'
+        // icon='/media/icons/duotune/general/gen019.svg'
         title='Crea una orden'
         fontIcon='bi-layers'
       />
       <SidebarMenuItem
         to='/#'
-        icon='/media/icons/duotune/general/gen019.svg'
+        // icon='/media/icons/duotune/general/gen019.svg'
         title='Crea una Oferta'
         fontIcon='bi-layers'
       />
       <SidebarMenuItem
         to='/#'
-        icon='/media/icons/duotune/general/gen019.svg'
+        // icon='/media/icons/duotune/general/gen019.svg'
         title='Panel de Órdenes Abiertas'
         fontIcon='bi-layers'
       />
       <SidebarMenuItem
         to='/#'
-        icon='/media/icons/duotune/general/gen019.svg'
+        // icon='/media/icons/duotune/general/gen019.svg'
         title='Panel de Oferta Energética'
         fontIcon='bi-layers'
       />
       <SidebarMenuItem
         to='/#'
-        icon='/media/icons/duotune/general/gen019.svg'
+        // icon='/media/icons/duotune/general/gen019.svg'
         title='Mis Transacciones'
         fontIcon='bi-layers'
       />
       <SidebarMenuItem
         to='/#'
-        icon='/media/icons/duotune/general/gen019.svg'
+        // icon='/media/icons/duotune/general/gen019.svg'
         title='Sala de Monitoreo'
         fontIcon='bi-layers'
       />
 
       <SidebarMenuItem
         to='/profile'
-        icon='/media/icons/duotune/general/gen019.svg'
+        // icon='/media/icons/duotune/general/gen019.svg'
         title='Perfil de Usuario'
+        fontIcon='bi-layers'
+      />
+
+      <SidebarMenuItem
+        to='/profile'
+        // icon='/media/icons/duotune/general/gen019.svg'
+        title='Tienda'
         fontIcon='bi-layers'
       />
 
