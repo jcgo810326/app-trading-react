@@ -12,6 +12,7 @@ export function MenuInner() {
       <MenuItem title='Portafolio' to='/portafolio' />
       {/* <MenuItem title='Perfil' to='/profile' /> */}
       <MenuItem title='Red Solamarte' to='/red-solamartes' />
+      <MenuItem title='Crear Orden' to='/crear-orden' />
 
       <MenuInnerWithSub
         title='Crafted'

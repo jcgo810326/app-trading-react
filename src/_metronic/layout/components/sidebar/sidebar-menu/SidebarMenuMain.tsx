@@ -35,7 +35,7 @@ const SidebarMenuMain = () => {
         fontIcon='bi-layers'
       />
       <SidebarMenuItem
-        to='/#'
+        to='/crear-orden'
         // icon='/media/icons/duotune/general/gen019.svg'
         title='Crea una orden'
         fontIcon='bi-layers'
