@@ -66,7 +66,7 @@ const PortafolioPage: React.FC = () => {
               </div>
 
               <div className=' my-auto me-6'>
-                <KTSVG path='/media/icons/duotune/arrows/arr075.svg' className='svg-icon-3' />
+                <KTSVG path='/media/icons/duotune/arrows/arr001.svg' className='svg-icon-3' />
               </div>
 
               <div className='col-12 col-sm-12 col-xl text-center'>
