@@ -6,13 +6,14 @@ type Props = {
   icon: string
   title: string
   description: string
+  link?: string
 }
 
-const Card4: FC<Props> = ({icon, title, description}) => {
+const Card4: FC<Props> = ({icon, title, description, link = '#'}) => {
   return (
     <div className='card h-100'>
       <div className='card-body d-flex justify-content-center text-center flex-column p-8'>
-        <a href='#' className='text-gray-800 text-hover-primary d-flex flex-column'>
+        <a href={link} className='text-gray-800 text-hover-primary d-flex flex-column'>
           <div className='symbol symbol-75px mb-6'>
             <img src={toAbsoluteUrl(icon)} alt='' />
           </div>

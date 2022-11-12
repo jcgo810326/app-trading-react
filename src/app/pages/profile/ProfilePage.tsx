@@ -1,9 +1,9 @@
 import React, {FC, useState} from 'react'
 import {Step1} from './steps/Step1'
 import Step2 from './steps/Step2'
-import Step3 from './steps/Step3'
-import {Step4} from './steps/Step4'
-import {Step5} from './steps/Step5'
+// import Step3 from './steps/Step3'
+// import {Step4} from './steps/Step4'
+// import {Step5} from './steps/Step5'
 
 import {KTSVG} from '../../../_metronic/helpers'
 
@@ -27,9 +27,9 @@ const ProfilePage: FC = () => {
           <div className='mx-auto mw-600px w-100 pt-15 pb-10'>
             {paso === 1 && <Step1 />}
             {paso === 2 && <Step2 />}
-            {paso === 3 && <Step3 />}
-            {paso === 4 && <Step3 />}
-            {paso === 5 && <Step3 />}
+            {/* {paso === 3 && <Step3 />} */}
+            {/* {paso === 4 && <Step3 />} */}
+            {/* {paso === 5 && <Step3 />} */}
 
             {/* <Step1 /> */}
           </div>

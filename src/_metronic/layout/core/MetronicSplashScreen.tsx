@@ -49,7 +49,7 @@ const MetronicSplashScreenProvider: FC<WithChildren> = ({children}) => {
   )
 }
 
-const LayoutSplashScreen: FC<{visible?: boolean}> = ({visible = true}) => {
+const LayoutSplashScreen: FC<{visible?: boolean}> = ({visible = false}) => {
   // Everything are ready - remove splashscreen
   const setCount = useContext(MetronicSplashScreenContext)
 

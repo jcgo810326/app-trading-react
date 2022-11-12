@@ -29,7 +29,7 @@ const SidebarMenuMain = () => {
         fontIcon='bi-layers'
       />
       <SidebarMenuItem
-        to='/#'
+        to='/red-solamartes'
         // icon='/media/icons/duotune/general/gen019.svg'
         title='Red Solamartes'
         fontIcon='bi-layers'
