@@ -299,7 +299,7 @@ const CrearOfertaPage: React.FC = () => {
             backdrop={true}
           >
             <div className='modal-header'>
-              <h2>Visualizar Orden</h2>
+              <h2>Visualizar Oferta</h2>
             </div>
 
             <div className='modal-body py-lg-10 px-lg-10'>
@@ -459,10 +459,10 @@ const CrearOfertaPage: React.FC = () => {
                   disabled={loading}
                   onClick={() => setShowModal(true)}
                 >
-                  {showCreateAppModal && 'Cancelar orden'}
+                  {showCreateAppModal && 'Cancelar oferta'}
                 </button>
                 <button type='button' className='btn btn-primary' onClick={() => creandoOrden()}>
-                  Crear orden
+                  Crear oferta
                 </button>
               </div>
             </div>
@@ -478,7 +478,7 @@ const CrearOfertaPage: React.FC = () => {
             backdrop={true}
           >
             <div className='modal-header shadow text-center'>
-              <h2>¿Estas seguro que quieres cancelar la orden?</h2>
+              <h2>¿Estas seguro que quieres cancelar la oferta?</h2>
             </div>
             <div className='card-footer  d-flex justify-content-center shadow  py-6 px-2'>
               <button
