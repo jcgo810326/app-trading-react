@@ -13,6 +13,7 @@ export function MenuInner() {
       {/* <MenuItem title='Perfil' to='/profile' /> */}
       <MenuItem title='Red Solamarte' to='/red-solamartes' />
       <MenuItem title='Crear Orden' to='/crear-orden' />
+      <MenuItem title='Crear Oferta' to='/crear-oferta' />
 
       <MenuInnerWithSub
         title='Crafted'
