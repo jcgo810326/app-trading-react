@@ -221,7 +221,7 @@ const CrearContraOfertaPage: React.FC = () => {
             backdrop={true}
           >
             <div className='modal-header'>
-              <h2>Visualizar Oferta</h2>
+              <h2>Visualizar Contra Oferta</h2>
             </div>
 
             <div className='modal-body py-lg-10 px-lg-10'>
