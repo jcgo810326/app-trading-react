@@ -47,6 +47,12 @@ const SidebarMenuMain = () => {
         fontIcon='bi-layers'
       />
       <SidebarMenuItem
+        to='/crear-contra-oferta'
+        // icon='/media/icons/duotune/general/gen019.svg'
+        title='Crea contra Oferta'
+        fontIcon='bi-layers'
+      />
+      <SidebarMenuItem
         to='/#'
         // icon='/media/icons/duotune/general/gen019.svg'
         title='Panel de Órdenes Abiertas'
