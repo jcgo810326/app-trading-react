@@ -7,6 +7,7 @@ import {useFormik} from 'formik'
 import {getUserByToken, login} from '../core/_requests'
 import {toAbsoluteUrl} from '../../../../_metronic/helpers'
 import {useAuth} from '../core/Auth'
+import {useAuthStore} from '../../../hooks/useAuthStore'
 
 const loginSchema = Yup.object().shape({
   email: Yup.string()
@@ -34,6 +35,7 @@ const initialValues = {
 export function Login() {
   const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
+  const {loginUser} = useAuthStore()
 
   const formik = useFormik({
     initialValues,
@@ -41,16 +43,18 @@ export function Login() {
     onSubmit: async (values, {setStatus, setSubmitting}) => {
       setLoading(true)
       try {
-        const {data: auth} = await login(values.email, values.password)
-        saveAuth(auth)
-        const {data: user} = await getUserByToken(auth.api_token)
-        setCurrentUser(user)
+        loginUser(values, setLoading)
+
+        // const {data: auth} = await login(values.email, values.password)
+        // saveAuth(auth)
+        // const {data: user} = await getUserByToken(auth.api_token)
+        // setCurrentUser(user)
       } catch (error) {
         console.error(error)
-        saveAuth(undefined)
-        setStatus('The login details are incorrect')
-        setSubmitting(false)
-        setLoading(false)
+        // saveAuth(undefined)
+        // setStatus('The login details are incorrect')
+        // setSubmitting(false)
+        // setLoading(false)
       }
     },
   })

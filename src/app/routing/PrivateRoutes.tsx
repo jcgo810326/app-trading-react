@@ -14,6 +14,7 @@ import EstacionPageWrapper from '../pages/red-solamartes/estacion/EstacionPageWr
 import CrearOrdenPageWrapper from '../pages/crear-orden/CrearOrdenPageWrapper'
 import CrearOfertaPageWrapper from '../pages/crear-oferta/CrearOfertaPageWrapper'
 import CrearContraOfertaPageWrapper from '../pages/crear-contra-oferta/CrearContraOfertaPageWrapper'
+import DepositoPageWrapper from '../pages/deposito/DepositoPageWrapper'
 
 const PrivateRoutes = () => {
   const ProfilePage = lazy(() => import('../modules/profile/ProfilePage'))
@@ -32,6 +33,7 @@ const PrivateRoutes = () => {
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='builder' element={<BuilderPageWrapper />} />
         <Route path='portafolio' element={<PortafolioPageWrapper />} />
+        <Route path='deposito' element={<DepositoPageWrapper />} />
         <Route path='profile' element={<ProfilePageWrapper />} />
         <Route path='red-solamartes' element={<RedSolamartesPageWrapper />} />
         {/* ruta dinamica red-solamartes */}

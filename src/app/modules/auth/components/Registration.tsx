@@ -9,10 +9,10 @@ import {Link} from 'react-router-dom'
 import {toAbsoluteUrl} from '../../../../_metronic/helpers'
 import {PasswordMeterComponent} from '../../../../_metronic/assets/ts/components'
 import {useAuth} from '../core/Auth'
+import {useAuthStore} from '../../../hooks/useAuthStore'
 
 const initialValues = {
-  firstname: '',
-  lastname: 't',
+  username: '',
   email: '',
   password: '',
   changepassword: '',
@@ -21,7 +21,7 @@ const initialValues = {
 }
 
 const registrationSchema = Yup.object().shape({
-  firstname: Yup.string()
+  username: Yup.string()
     .min(3, 'Minimo 3 letras')
     .max(36, 'Maximo 36 letras')
     .required('Usuario es Requerido'),
@@ -47,28 +47,23 @@ const registrationSchema = Yup.object().shape({
 export function Registration() {
   const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
+  const {registerUser} = useAuthStore()
+
   const formik = useFormik({
     initialValues,
     validationSchema: registrationSchema,
     onSubmit: async (values, {setStatus, setSubmitting}) => {
       setLoading(true)
+      const {username, email, password} = values
+      registerUser({username, email, password}, setLoading)
       try {
-        const {data: auth} = await register(
-          values.email,
-          values.firstname,
-          values.lastname,
-          values.password,
-          values.changepassword
-        )
-        saveAuth(auth)
-        const {data: user} = await getUserByToken(auth.api_token)
-        setCurrentUser(user)
+        console.log(values)
       } catch (error) {
         console.error(error)
-        saveAuth(undefined)
-        setStatus('Hubo un error en el registro')
-        setSubmitting(false)
-        setLoading(false)
+        // saveAuth(undefined)
+        // setStatus('Hubo un error en el registro')
+        // setSubmitting(false)
+        // setLoading(false)
       }
     },
   })
@@ -154,21 +149,21 @@ export function Registration() {
           placeholder='Usuario'
           type='text'
           autoComplete='off'
-          {...formik.getFieldProps('firstname')}
+          {...formik.getFieldProps('username')}
           className={clsx(
             'form-control bg-transparent',
             {
-              'is-invalid': formik.touched.firstname && formik.errors.firstname,
+              'is-invalid': formik.touched.username && formik.errors.username,
             },
             {
-              'is-valid': formik.touched.firstname && !formik.errors.firstname,
+              'is-valid': formik.touched.username && !formik.errors.username,
             }
           )}
         />
-        {formik.touched.firstname && formik.errors.firstname && (
+        {formik.touched.username && formik.errors.username && (
           <div className='fv-plugins-message-container'>
             <div className='fv-help-block'>
-              <span role='alert'>{formik.errors.firstname}</span>
+              <span role='alert'>{formik.errors.username}</span>
             </div>
           </div>
         )}
